@@ -7,7 +7,7 @@ This library contains various Kotlin extensions for the [Java 8 java.time API](h
 kxdate supports the [Rails-style](http://guides.rubyonrails.org/active_support_core_extensions.html#time) syntax for defining date constants:
 
 ```
-1.months.from_now
+1.months.fromNow
 
 2.years.ago
 

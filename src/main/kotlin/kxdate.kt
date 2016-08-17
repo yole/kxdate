@@ -1,9 +1,9 @@
 package ru.yole.kxdate
 
 import java.time.Duration
+import java.time.LocalDate
 import java.time.LocalDateTime
 import java.time.Period
-import java.time.temporal.TemporalAmount
 
 val Int.nanoseconds: Duration
     get() = Duration.ofNanos(toLong())
@@ -23,8 +23,8 @@ val Int.minutes: Duration
 val Int.hours: Duration
     get() = Duration.ofHours(toLong())
 
-val Int.days: Duration
-    get() = Duration.ofDays(toLong())
+val Int.days: Period
+    get() = Period.ofDays(this)
 
 val Int.weeks: Period
     get() = Period.ofWeeks(this)
@@ -35,8 +35,14 @@ val Int.months: Period
 val Int.years: Period
     get() = Period.ofYears(this)
 
-val TemporalAmount.ago: LocalDateTime
+val Duration.ago: LocalDateTime
     get() =  LocalDateTime.now() - this
 
-val TemporalAmount.fromNow: LocalDateTime
+val Duration.fromNow: LocalDateTime
     get() =  LocalDateTime.now() + this
+
+val Period.ago: LocalDate
+    get() = LocalDate.now() - this
+
+val Period.fromNow: LocalDate
+    get() = LocalDate.now() + this
