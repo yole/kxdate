@@ -15,6 +15,12 @@ class KxDateTest {
     }
 
     @Test
+    fun oneDayAgoInfix() {
+        val x = 1 days ago
+        assertEquals(LocalDate.now().minusDays(1), x)
+    }
+
+    @Test
     fun oneWeekFromNow() {
         val x = 1.weeks.fromNow
         assertEquals(LocalDate.now().plusDays(7), x)
