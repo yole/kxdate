@@ -11,5 +11,5 @@ kxdate supports the [Rails-style](http://guides.rubyonrails.org/active_support_c
 
 2.years.ago
 
-(4.months + 5.years).from_now
+(4.months + 5.years).fromNow
 ```
